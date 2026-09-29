@@ -1,0 +1,23 @@
+/* =========================================================
+   AJUSTES DE LAYOUT POR BREAKPOINT (mobile-first)
+   A base acima é pensada para celulares (< 576px).
+   ========================================================= */
+@media (min-width: 768px) {
+  .hero { padding-block: var(--espaco-3xl); }
+  .secao { padding-block: var(--espaco-3xl); }
+  .grid { gap: var(--espaco-xl); }
+}
+
+@media (min-width: 1024px) {
+  .hero__texto { font-size: var(--texto-lg); }
+  .menu { gap: var(--espaco-xl); }
+}
+
+@media (min-width: 1280px) {
+  :root { --largura-max: 1200px; }
+}
+
+@media (min-width: 1440px) {
+  :root { --largura-max: 1320px; }
+  body { font-size: 1.0625rem; }
+}

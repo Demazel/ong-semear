@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ONG Semear: organização sem fins lucrativos que promove educação, segurança alimentar e inclusão por meio do voluntariado.">
+  <title>ONG Semear</title>
+  <link rel="icon" href="../imagens/logo-semear.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/variaveis.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/componentes.css">
+  <link rel="stylesheet" href="../css/responsivo.css">
+  <script type="module" src="../js/main.js"></script>
+</head>
+<body>
+  <a href="#app" class="pular-link">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="container topo__conteudo">
+      <a href="#/inicio" class="logo">
+        <img src="../imagens/logo-semear.svg" alt="ONG Semear, ir para o início" width="180" height="60">
+      </a>
+      <nav class="navegacao" aria-label="Menu principal">
+        <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+          <span class="menu-toggle__barra"></span>
+          <span class="menu-toggle__barra"></span>
+          <span class="menu-toggle__barra"></span>
+        </button>
+        <ul class="menu" id="menu-principal">
+          <li><a href="#/inicio" data-rota="inicio">Início</a></li>
+          <li class="menu__item--dropdown"><a href="#/projetos" data-rota="projetos">Projetos</a>
+            <ul class="submenu">
+              <li><a href="#/projetos/projetos">Projetos sociais</a></li>
+              <li><a href="#/projetos/voluntariado">Como ser voluntário</a></li>
+              <li><a href="#/projetos/doacoes">Campanhas de doação</a></li>
+              <li><a href="#/projetos/transparencia">Transparência</a></li>
+            </ul>
+          </li>
+          <li><a href="#/cadastro" data-rota="cadastro" class="botao botao--pequeno">Seja Voluntário</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Conteúdo trocado pelo roteador (js/modules/router.js) sem recarregar a página -->
+  <main id="app" tabindex="-1">
+    <noscript>
+      <div class="container secao">
+        <p class="alerta alerta--aviso">Este site precisa de JavaScript para funcionar. Ative-o nas configurações do navegador.</p>
+      </div>
+    </noscript>
+  </main>
+
+  <footer class="rodape">
+    <div class="container grid">
+      <address class="col-12 col-sm-6 col-lg-4">
+        <strong>ONG Semear</strong><br>
+        Rua das Palmeiras, 123, Centro, Fortaleza/CE<br>
+        <a href="tel:+5585999990000">(85) 99999-0000</a><br>
+        <a href="mailto:contato@ongsemear.org.br">contato@ongsemear.org.br</a>
+      </address>
+      <nav class="col-12 col-sm-6 col-lg-4" aria-label="Links do rodapé">
+        <ul>
+          <li><a href="#/inicio">Início</a></li>
+          <li><a href="#/projetos">Projetos</a></li>
+          <li><a href="#/cadastro">Seja Voluntário</a></li>
+        </ul>
+      </nav>
+      <p class="col-12 col-lg-4">&copy; 2026 ONG Semear. Todos os direitos reservados.<br>CNPJ: 00.000.000/0001-00</p>
+    </div>
+  </footer>
+</body>
+</html>

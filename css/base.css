@@ -1,0 +1,40 @@
+/* ===== Base ===== */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--fonte-base);
+  font-size: var(--texto-base);
+  line-height: var(--altura-linha);
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--cor-primaria); transition: color var(--transicao); }
+a:hover { color: var(--cor-primaria-escura); }
+
+:focus-visible { outline: 3px solid var(--cor-secundaria); outline-offset: 2px; }
+
+h1, h2, h3 { line-height: var(--altura-linha-titulo); color: var(--cor-primaria-escura); }
+h1 { font-size: var(--texto-xl); }
+h2 { font-size: var(--texto-lg); }
+h3 { font-size: var(--texto-md); }
+
+.container { width: min(var(--largura-max), 100% - 2rem); margin-inline: auto; }
+.container--estreito { width: min(var(--largura-texto), 100% - 2rem); }
+
+.pular-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--cor-primaria-escura);
+  color: var(--cor-fundo);
+  padding: var(--espaco-sm) var(--espaco-md);
+  z-index: 10;
+}
+.pular-link:focus { left: var(--espaco-md); }
+
+/* Área da SPA recebe foco a cada troca de rota; o contorno seria só ruído visual */
+#app:focus { outline: none; }

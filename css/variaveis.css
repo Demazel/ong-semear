@@ -1,0 +1,65 @@
+/* =========================================================
+   DESIGN SYSTEM - ONG Semear
+   Todas as decisões visuais ficam centralizadas aqui.
+   ========================================================= */
+:root {
+  /* ----- Cores primárias (verde: natureza, crescimento, confiança) ----- */
+  --cor-primaria: #2e7d4f;         /* botões, links, destaques (5,1:1 no branco) */
+  --cor-primaria-escura: #1f5c3a;  /* hover, títulos, rodapé (7,9:1 no branco) */
+  --cor-primaria-clara: #e8f5ec;   /* fundos de seção e mensagens */
+
+  /* ----- Cor secundária (amarelo: sol, colheita, energia) ----- */
+  --cor-secundaria: #f2b705;       /* foco do teclado e detalhes */
+  --cor-secundaria-clara: #fff6d6; /* fundo de avisos */
+
+  /* ----- Neutros ----- */
+  --cor-texto: #1e2a23;            /* texto principal (14,6:1) */
+  --cor-texto-suave: #4f5d55;      /* legendas e dicas (6,9:1) */
+  --cor-borda: #cfd8d2;
+  --cor-fundo: #ffffff;
+  --cor-fundo-alt: #f6f8f7;
+
+  /* ----- Feedback ----- */
+  --cor-erro: #b3261e;             /* 6,5:1 no branco */
+  --cor-erro-clara: #fdf1f0;
+  --cor-sombra: rgba(31, 92, 58, 0.12);
+  --cor-overlay: rgba(30, 42, 35, 0.6);
+  --cor-info: #1f5f99;             /* 6,6:1 no branco */
+  --cor-info-clara: #e7f0f9;
+  --cor-aviso: #8a5a00;            /* âmbar escuro para texto, 5,9:1 */
+  --cor-foco: rgba(46, 125, 79, 0.25);      /* anel de foco dos campos */
+  --cor-erro-foco: rgba(179, 38, 30, 0.2);
+
+  /* ----- Tipografia: escala modular 1.25 (terça maior) ----- */
+  --fonte-base: "Segoe UI", Roboto, Arial, sans-serif;
+  --texto-sm: 0.875rem;                            /* 14px - legendas, rodapé */
+  --texto-base: 1rem;                              /* 16px - corpo */
+  --texto-md: 1.25rem;                             /* 20px - h3, destaques */
+  --texto-lg: 1.563rem;                            /* 25px - h2 */
+  --texto-xl: clamp(1.953rem, 1.5rem + 2vw, 2.441rem); /* 31-39px - h1 */
+  --altura-linha: 1.6;
+  --altura-linha-titulo: 1.25;
+  --peso-normal: 400;
+  --peso-destaque: 600;
+  --peso-forte: 700;
+
+  /* ----- Espaçamento: escala de 8px (com meio passo de 4px) ----- */
+  --espaco-xs: 0.25rem;  /* 4px  */
+  --espaco-sm: 0.5rem;   /* 8px  */
+  --espaco-md: 1rem;     /* 16px */
+  --espaco-lg: 1.5rem;   /* 24px */
+  --espaco-xl: 2rem;     /* 32px */
+  --espaco-2xl: 3rem;    /* 48px */
+  --espaco-3xl: 4rem;    /* 64px */
+
+  /* ----- Bordas, sombras e transições ----- */
+  --raio-sm: 6px;
+  --raio: 10px;
+  --raio-pill: 999px;
+  --sombra: 0 4px 12px var(--cor-sombra);
+  --transicao: 0.2s ease;
+
+  /* ----- Larguras ----- */
+  --largura-max: 1100px;
+  --largura-texto: 720px;
+}
