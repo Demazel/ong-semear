@@ -154,6 +154,12 @@ export const paginaProjetos = () => `
 
   <section id="transparencia" class="secao container" aria-labelledby="titulo-transparencia">
     <h2 id="titulo-transparencia">Transparência e prestação de contas</h2>
+    <figure class="grafico" hidden>
+      <div class="grafico__area">
+        <canvas id="grafico-transparencia" role="img" aria-label="Gráfico de barras comparando o valor arrecadado e o aplicado em cada projeto. Os valores exatos estão na tabela abaixo."></canvas>
+      </div>
+      <figcaption>Arrecadado x aplicado por projeto (gerado com Chart.js a partir dos dados da tabela).</figcaption>
+    </figure>
     <div class="tabela-rolagem">
       <table>
         <caption>Arrecadação e aplicação dos recursos no 1º semestre de 2026</caption>

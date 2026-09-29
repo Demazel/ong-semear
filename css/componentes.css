@@ -168,6 +168,10 @@ th, td { padding: var(--espaco-md); border-bottom: 1px solid var(--cor-borda); t
 thead th { background: var(--cor-primaria); color: var(--cor-fundo); }
 tbody tr:nth-child(even) { background: var(--cor-fundo-alt); }
 
+/* ===== Gráfico (Chart.js) ===== */
+.grafico { margin-bottom: var(--espaco-xl); }
+.grafico__area { position: relative; height: 280px; }
+
 /* ===== FAQ ===== */
 details {
   border: 1px solid var(--cor-borda);
