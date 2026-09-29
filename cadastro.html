@@ -8,6 +8,7 @@
   <link rel="icon" href="imagens/logo-semear.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/menu.js" defer></script>
+  <script src="js/componentes.js" defer></script>
   <script src="js/mascaras.js" defer></script>
 </head>
 <body>
@@ -51,6 +52,12 @@
     <section class="secao container container--estreito" aria-labelledby="titulo-form">
       <h2 id="titulo-form">Formulário de cadastro</h2>
       <p class="aviso">Campos marcados com <span class="obrigatorio">*</span> são obrigatórios.</p>
+      <div class="alerta alerta--info" role="note">
+        <p>Seus dados são usados apenas para o cadastro de voluntários e ficam protegidos conforme a LGPD.</p>
+      </div>
+      <div id="alerta-erro" class="alerta alerta--erro" role="alert" hidden>
+        <p><strong>Não foi possível enviar.</strong> Corrija os campos destacados em vermelho.</p>
+      </div>
 
       <form id="form-cadastro" class="formulario" action="#" method="post">
         <fieldset>
@@ -178,7 +185,7 @@
         </fieldset>
 
         <button type="submit" class="botao">Enviar cadastro</button>
-        <p id="mensagem-sucesso" class="mensagem-sucesso" role="status" tabindex="-1" hidden>Cadastro enviado com sucesso! Em breve entraremos em contato.</p>
+        <div id="mensagem-sucesso" class="alerta alerta--sucesso" role="status" tabindex="-1" hidden><p>Cadastro enviado com sucesso! Em breve entraremos em contato.</p></div>
       </form>
     </section>
   </main>

@@ -48,7 +48,14 @@ if (campoCep) {
 // O evento submit só dispara quando todas as validações nativas passam
 const formulario = document.getElementById('form-cadastro');
 const mensagem = document.getElementById('mensagem-sucesso');
+const alertaErro = document.getElementById('alerta-erro');
 if (formulario && mensagem) {
+  // Algum campo inválido ao tentar enviar: mostra o alerta de erro no topo
+  formulario.addEventListener('invalid', () => {
+    if (alertaErro) alertaErro.hidden = false;
+    mensagem.hidden = true;
+  }, true);
+
   formulario.addEventListener('submit', (evento) => {
     evento.preventDefault();
     // Estado disabled enquanto "envia", evitando clique duplo
@@ -59,8 +66,10 @@ if (formulario && mensagem) {
       formulario.reset();
       botao.disabled = false;
       botao.textContent = 'Enviar cadastro';
+      if (alertaErro) alertaErro.hidden = true;
       mensagem.hidden = false;
       mensagem.focus();
+      if (typeof mostrarToast === 'function') mostrarToast('Cadastro enviado com sucesso!');
     }, 1200);
   });
 }

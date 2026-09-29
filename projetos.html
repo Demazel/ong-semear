@@ -8,6 +8,7 @@
   <link rel="icon" href="imagens/logo-semear.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/menu.js" defer></script>
+  <script src="js/componentes.js" defer></script>
 </head>
 <body>
   <a href="#conteudo" class="pular-link">Pular para o conteúdo</a>
@@ -57,6 +58,10 @@
               <img src="imagens/projeto-horta.jpg" alt="Voluntários plantando mudas de hortaliças em canteiros de uma horta comunitária" width="800" height="1200" loading="lazy">
             </picture>
           </figure>
+          <div class="badges">
+            <span class="badge badge--meio-ambiente">Meio ambiente</span>
+            <span class="badge badge--vagas">Vagas abertas</span>
+          </div>
           <h3>Horta Comunitária</h3>
           <p>Transforma terrenos ociosos em hortas que abastecem famílias e ensinam técnicas de cultivo sustentável.</p>
           <ul>
@@ -72,6 +77,10 @@
               <img src="imagens/projeto-reforco-escolar.jpg" alt="Voluntária ajudando crianças com a lição de casa em uma sala de aula" width="800" height="1199" loading="lazy">
             </picture>
           </figure>
+          <div class="badges">
+            <span class="badge badge--educacao">Educação</span>
+            <span class="badge badge--vagas">Vagas abertas</span>
+          </div>
           <h3>Reforço Escolar</h3>
           <p>Aulas gratuitas de português e matemática para crianças do ensino fundamental, no contraturno escolar.</p>
           <ul>
@@ -87,6 +96,10 @@
               <img src="imagens/projeto-cesta-solidaria.jpg" alt="Caixas de doação cheias de alimentos não perecíveis organizadas sobre uma mesa" width="800" height="1067" loading="lazy">
             </picture>
           </figure>
+          <div class="badges">
+            <span class="badge badge--alimentacao">Alimentação</span>
+            <span class="badge badge--urgente">Urgente</span>
+          </div>
           <h3>Cesta Solidária</h3>
           <p>Arrecadação e distribuição mensal de cestas básicas para famílias em situação de insegurança alimentar.</p>
           <ul>
@@ -112,6 +125,9 @@
 
     <section id="doacoes" class="secao container" aria-labelledby="titulo-doacoes">
       <h2 id="titulo-doacoes">Campanhas de doação</h2>
+      <div class="alerta alerta--aviso" role="note">
+        <p><strong>Últimos dias:</strong> a Campanha do Agasalho termina em 15 de outubro.</p>
+      </div>
       <div class="grid">
         <article class="card col-12 col-md-6">
           <h3>Campanha do Agasalho</h3>
@@ -126,12 +142,28 @@
           <progress id="meta-material" value="35" max="100">35%</progress>
         </article>
       </div>
+      <p><button type="button" class="botao" data-abrir-modal="modal-doacao">Doar agora</button></p>
       <h3>Formas de doar</h3>
       <ul class="lista-acoes">
         <li>PIX: <strong>doe@ongsemear.org.br</strong></li>
         <li>Transferência: Banco 000, agência 0001, conta 12345-6</li>
         <li>Doação de itens: na sede, de segunda a sexta, das 8h às 17h</li>
       </ul>
+      <dialog id="modal-doacao" class="modal" aria-labelledby="titulo-modal-doacao">
+        <div class="modal__conteudo">
+          <button type="button" class="modal__fechar" data-fechar-modal aria-label="Fechar">&times;</button>
+          <h2 id="titulo-modal-doacao">Faça sua doação via PIX</h2>
+          <p>Use a chave abaixo no aplicativo do seu banco. Todo o valor vai para os projetos da ONG Semear.</p>
+          <p><span class="badge badge--meio-ambiente">Chave e-mail</span> <strong>doe@ongsemear.org.br</strong></p>
+          <div class="alerta alerta--info" role="note">
+            <p>Precisa de recibo? Envie o comprovante para contato@ongsemear.org.br.</p>
+          </div>
+          <div class="modal__acoes">
+            <button type="button" class="botao" data-copiar="doe@ongsemear.org.br">Copiar chave PIX</button>
+            <button type="button" class="botao botao--contorno" data-fechar-modal>Fechar</button>
+          </div>
+        </div>
+      </dialog>
     </section>
 
     <section id="transparencia" class="secao container" aria-labelledby="titulo-transparencia">
