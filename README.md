@@ -4,6 +4,18 @@ Plataforma web da ONG Semear, organização fictícia do terceiro setor que prom
 
 **Site publicado:** https://demazel.github.io/ong-semear/
 
+## Sumário
+
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias](#tecnologias)
+- [Estrutura de pastas](#estrutura-de-pastas)
+- [Pré-requisitos](#pré-requisitos)
+- [Como executar localmente](#como-executar-localmente)
+- [Como testar](#como-testar)
+- [Acessibilidade](#acessibilidade)
+- [Fluxo de trabalho (GitFlow)](#fluxo-de-trabalho-gitflow)
+- [Versões](#versões)
+
 ## Funcionalidades
 
 - **SPA (Single Page Application)** com roteamento por hash (`#/inicio`, `#/projetos`, `#/cadastro`) e página 404
@@ -13,6 +25,7 @@ Plataforma web da ONG Semear, organização fictícia do terceiro setor que prom
 - **Gráfico de transparência** com Chart.js (carregado sob demanda)
 - **Design responsivo** mobile-first com grid de 12 colunas e 5 breakpoints
 - **Componentes**: menu hambúrguer com dropdown, modal, toast, alertas e badges
+- **Modo alto contraste** com preferência salva
 
 ## Tecnologias
 
@@ -55,17 +68,64 @@ ong-semear/
 └── imagens/              # SVG, WebP e JPG
 ```
 
+## Pré-requisitos
+
+- [Git](https://git-scm.com/) para clonar o repositório
+- Um navegador atualizado (Chrome, Edge, Firefox ou Safari)
+- Um servidor HTTP local. Qualquer uma destas opções serve:
+  - Python 3 (`python -m http.server`)
+  - Node.js 18+ (`npx serve`)
+  - Extensão Live Server do VS Code
+
+O projeto **não tem dependências para instalar** nem etapa de build obrigatória: é HTML, CSS e JavaScript puros. O Chart.js é carregado pela CDN.
+
 ## Como executar localmente
 
-O projeto usa ES Modules, que não funcionam abrindo o arquivo direto (`file://`). É preciso um servidor local:
+O projeto usa ES Modules, que não funcionam abrindo o arquivo direto (`file://`) por causa da política de CORS do navegador. Por isso é preciso um servidor local.
 
-```bash
-git clone https://github.com/Demazel/ong-semear.git
-cd ong-semear
-python -m http.server 8000
-```
+1. Clone o repositório e entre na pasta:
 
-Depois acesse http://localhost:8000.
+   ```bash
+   git clone https://github.com/Demazel/ong-semear.git
+   cd ong-semear
+   ```
+
+2. Inicie um servidor (escolha um):
+
+   ```bash
+   python -m http.server 8000
+   ```
+
+   ```bash
+   npx serve -l 8000
+   ```
+
+3. Acesse http://localhost:8000. A raiz redireciona para `html/index.html#/inicio`.
+
+## Como testar
+
+Roteiro de verificação manual antes de cada release:
+
+| Área | O que conferir |
+| --- | --- |
+| Navegação | Menu e rodapé trocam de rota sem recarregar; o botão Voltar funciona; `#/qualquer-coisa` mostra a página 404 |
+| Formulário | Enviar vazio mostra o alerta e as mensagens por campo; CPF `111.111.111-11` é recusado; CEP `01001-000` preenche o endereço |
+| localStorage | Recarregar a página mantém o rascunho; o cadastro enviado aparece na lista; CPF repetido é bloqueado |
+| Responsivo | 375px, 768px, 1024px e 1440px sem rolagem horizontal; menu hambúrguer abaixo de 768px |
+| Acessibilidade | Navegação completa só com Tab/Shift+Tab/Enter/Esc; foco sempre visível; Lighthouse Acessibilidade ≥ 90 |
+
+Para auditar: abra o DevTools (F12) > **Lighthouse** > marque *Accessibility* e *Performance* > **Analyze page load**.
+
+## Acessibilidade
+
+O projeto segue a WCAG 2.1 nível AA:
+
+- HTML semântico (`header`, `nav`, `main`, `section`, `article`, `address`) e um único `h1` por rota
+- Contraste mínimo de 4,5:1 no tema padrão e de 7:1 no modo alto contraste
+- Navegação por teclado: link "Pular para o conteúdo", foco visível, dropdown com `:focus-within`, Esc fecha o menu
+- Atributos ARIA: `aria-current`, `aria-expanded`, `aria-pressed`, `aria-invalid`, `aria-describedby`, `role="alert"` e `role="status"`
+- Mensagens de erro com texto e ícone, sem depender só da cor
+- Respeito a `prefers-reduced-motion` e `prefers-contrast`
 
 ## Fluxo de trabalho (GitFlow)
 
@@ -77,7 +137,30 @@ Depois acesse http://localhost:8000.
 | `release/*` | Preparação de uma versão (ajustes finais, versão no CHANGELOG), integrada em `main` e `develop`. |
 | `hotfix/*` | Correção urgente em produção, criada a partir de `main`. |
 
-Os commits seguem o padrão [Conventional Commits](https://www.conventionalcommits.org/pt-br/) (`feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `perf:`, `chore:`) e as versões seguem o [Versionamento Semântico](https://semver.org/lang/pt-BR/). O histórico de versões está no [CHANGELOG](CHANGELOG.md).
+Os commits seguem o padrão [Conventional Commits](https://www.conventionalcommits.org/pt-br/) (`feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `perf:`, `chore:`) e as versões seguem o [Versionamento Semântico](https://semver.org/lang/pt-BR/). 
+Exemplos de commits:
+
+```text
+feat(a11y): adiciona modo alto contraste com preferência salva
+docs: adiciona README com funcionalidades, estrutura e fluxo GitFlow
+```
+
+As tarefas são organizadas em [issues](https://github.com/Demazel/ong-semear/issues) agrupadas no [milestone v4.0.0](https://github.com/Demazel/ong-semear/milestone/1), e cada feature entra na `develop` por [pull request](https://github.com/Demazel/ong-semear/pulls?q=is%3Apr).
+
+## Versões
+
+| Versão | Entrega |
+| --- | --- |
+| [v1.0.0](https://github.com/Demazel/ong-semear/releases/tag/v1.0.0) | Estrutura HTML5 semântica |
+| [v2.0.0](https://github.com/Demazel/ong-semear/releases/tag/v2.0.0) | CSS3, design system e responsividade |
+| [v3.0.0](https://github.com/Demazel/ong-semear/releases/tag/v3.0.0) | SPA em JavaScript |
+| v4.0.0 (em andamento) | Versionamento, acessibilidade, otimização e documentação |
+
+O histórico detalhado está no [CHANGELOG](CHANGELOG.md).
+
+## Autor
+
+Henrique Benjamim ([@Demazel](https://github.com/Demazel))
 
 ## Licença
 
