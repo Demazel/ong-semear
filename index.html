@@ -7,6 +7,7 @@
   <title>ONG Semear | Início</title>
   <link rel="icon" href="imagens/logo-semear.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/menu.js" defer></script>
 </head>
 <body>
   <a href="#conteudo" class="pular-link">Pular para o conteúdo</a>
@@ -16,10 +17,22 @@
       <a href="index.html" class="logo">
         <img src="imagens/logo-semear.svg" alt="Logotipo da ONG Semear" width="180" height="60">
       </a>
-      <nav aria-label="Menu principal">
-        <ul class="menu">
+      <nav class="navegacao" aria-label="Menu principal">
+        <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+          <span class="menu-toggle__barra"></span>
+          <span class="menu-toggle__barra"></span>
+          <span class="menu-toggle__barra"></span>
+        </button>
+        <ul class="menu" id="menu-principal">
           <li><a href="index.html" aria-current="page">Início</a></li>
-          <li><a href="projetos.html">Projetos</a></li>
+          <li class="menu__item--dropdown"><a href="projetos.html">Projetos</a>
+            <ul class="submenu">
+              <li><a href="projetos.html#projetos">Projetos sociais</a></li>
+              <li><a href="projetos.html#voluntariado">Como ser voluntário</a></li>
+              <li><a href="projetos.html#doacoes">Campanhas de doação</a></li>
+              <li><a href="projetos.html#transparencia">Transparência</a></li>
+            </ul>
+          </li>
           <li><a href="cadastro.html" class="botao botao--pequeno">Seja Voluntário</a></li>
         </ul>
       </nav>
