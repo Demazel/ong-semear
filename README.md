@@ -11,6 +11,7 @@ Plataforma web da ONG Semear, organização fictícia do terceiro setor que prom
 - [Estrutura de pastas](#estrutura-de-pastas)
 - [Pré-requisitos](#pré-requisitos)
 - [Como executar localmente](#como-executar-localmente)
+- [Build de produção](#build-de-produção)
 - [Como testar](#como-testar)
 - [Acessibilidade](#acessibilidade)
 - [Fluxo de trabalho (GitFlow)](#fluxo-de-trabalho-gitflow)
@@ -36,7 +37,8 @@ Plataforma web da ONG Semear, organização fictícia do terceiro setor que prom
 | Comportamento | JavaScript ES6+ (ES Modules, sem framework) |
 | Biblioteca | Chart.js 4.4.4 via CDN |
 | API externa | ViaCEP |
-| Hospedagem | GitHub Pages |
+| Build | Vite 6 (minificação e bundle) |
+| Hospedagem | GitHub Pages via GitHub Actions |
 
 ## Estrutura de pastas
 
@@ -65,7 +67,10 @@ ong-semear/
 │       ├── grafico.js    # integração com Chart.js
 │       ├── menu.js       # menu hambúrguer
 │       └── ui.js         # toast e modal
-└── imagens/              # SVG, WebP e JPG
+├── imagens/              # SVG, WebP e JPG
+├── vite.config.js        # configuração do build de produção
+├── package.json          # scripts dev, build e preview
+└── .github/workflows/    # deploy automático no GitHub Pages
 ```
 
 ## Pré-requisitos
@@ -77,7 +82,7 @@ ong-semear/
   - Node.js 18+ (`npx serve`)
   - Extensão Live Server do VS Code
 
-O projeto **não tem dependências para instalar** nem etapa de build obrigatória: é HTML, CSS e JavaScript puros. O Chart.js é carregado pela CDN.
+Para desenvolver, o projeto **não precisa de dependências**: é HTML, CSS e JavaScript puros, e o Chart.js vem da CDN. Para gerar o build de produção é preciso o **Node.js 18+** (veja [Build de produção](#build-de-produção)).
 
 ## Como executar localmente
 
@@ -101,6 +106,26 @@ O projeto usa ES Modules, que não funcionam abrindo o arquivo direto (`file://`
    ```
 
 3. Acesse http://localhost:8000. A raiz redireciona para `html/index.html#/inicio`.
+
+## Build de produção
+
+O build usa o [Vite](https://vite.dev/), que junta e minifica os arquivos e gera a pasta `dist/`:
+
+```bash
+npm install
+npm run build
+npm run preview
+```
+
+O último comando serve o `dist/` em http://localhost:4173 para conferir o resultado.
+
+| Arquivos | Código-fonte | Build | Redução |
+| --- | --- | --- | --- |
+| CSS (5 → 1 arquivo) | 26,9 KB | 17,8 KB | 34% |
+| JavaScript (13 → 1 arquivo) | 40,5 KB | 27,9 KB | 31% |
+| Total com gzip | 25,8 KB | 16,9 KB | 35% |
+
+A publicação é automática: a cada push na `main`, o workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) roda `npm ci` e `npm run build` e publica o `dist/` no GitHub Pages.
 
 ## Como testar
 

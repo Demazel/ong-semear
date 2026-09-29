@@ -8,9 +8,13 @@ Todas as mudanças relevantes do projeto. Formato baseado em [Keep a Changelog](
 - README com sumário, pré-requisitos, execução local, roteiro de testes, acessibilidade, GitFlow e versões
 - Este CHANGELOG
 - Modo alto contraste com preferência salva e suporte a `prefers-contrast` (#2, PR #5)
+- Build de produção com Vite: CSS 34% e JS 31% menores, de 19 para 3 requisições (#4)
+- Deploy automático no GitHub Pages via GitHub Actions
 
 ### Corrigido
 - Ícones ⚠ e ✓ das mensagens de validação exibidos como código
+- Primeiro Tab pulava o link de atalho e o menu (PR #7)
+- Contraste não textual do contorno de foco e das barras do gráfico (PR #8)
 
 ## [3.0.0] - 2026-09-29
 
