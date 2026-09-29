@@ -120,7 +120,12 @@ figcaption { font-size: .9rem; color: var(--texto-suave); margin-top: .5rem; }
 }
 .card h3 { margin-top: 0; }
 .card--projeto figure { margin: -1.5rem -1.5rem 1rem; }
-.card--projeto img { border-radius: var(--raio) var(--raio) 0 0; }
+.card--projeto img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--raio) var(--raio) 0 0;
+}
 
 .lista-acoes li, .passos li { margin-bottom: .5rem; }
 .passos { margin-bottom: 1.5rem; }
