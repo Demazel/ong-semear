@@ -158,7 +158,11 @@ figcaption { font-size: var(--texto-sm); color: var(--cor-texto-suave); margin-t
   border-radius: var(--raio);
   padding: var(--espaco-lg);
   transition: box-shadow var(--transicao);
+  /* Flexbox em coluna: o rodapé do card (lista/metas) fica sempre alinhado embaixo */
+  display: flex;
+  flex-direction: column;
 }
+.card--projeto > ul, .card > p:has(> label) { margin-top: auto; }
 .card:hover { box-shadow: var(--sombra); }
 .card h3 { margin-top: 0; }
 .card--projeto figure { margin: calc(var(--espaco-lg) * -1) calc(var(--espaco-lg) * -1) var(--espaco-md); }
