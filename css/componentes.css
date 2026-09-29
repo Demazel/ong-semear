@@ -24,7 +24,7 @@
   box-shadow: var(--sombra);
   transform: translateY(-2px);
 }
-.botao:focus-visible { outline: 3px solid var(--cor-secundaria); outline-offset: 3px; }
+.botao:focus-visible { outline: 3px solid var(--cor-foco-contorno); outline-offset: 3px; }
 .botao:active {
   transform: translateY(0);
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.25);

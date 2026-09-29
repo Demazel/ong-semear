@@ -52,6 +52,7 @@ progress { width: 100%; height: var(--espaco-md); accent-color: var(--cor-primar
   padding-block: var(--espaco-2xl);
   margin-top: var(--espaco-xl);
 }
+.rodape :focus-visible { outline-color: var(--cor-fundo); } /* rodapé escuro: contorno claro (7,92:1) */
 .rodape a { color: var(--cor-fundo); }
 .rodape address { font-style: normal; }
 .rodape ul { list-style: none; margin: 0; padding: 0; }
