@@ -13,7 +13,7 @@ document.addEventListener('semear:tema', () => {
   const css = getComputedStyle(document.documentElement);
   const cor = (nome) => css.getPropertyValue(nome).trim();
   graficoAtual.data.datasets[0].backgroundColor = cor('--cor-primaria');
-  graficoAtual.data.datasets[1].backgroundColor = cor('--cor-secundaria');
+  graficoAtual.data.datasets[1].backgroundColor = cor('--cor-info');
   graficoAtual.options.plugins.legend.labels.color = cor('--cor-texto');
   graficoAtual.options.scales.x.ticks.color = cor('--cor-texto');
   graficoAtual.options.scales.y.ticks.color = cor('--cor-texto');
@@ -39,7 +39,7 @@ export async function montarGraficoTransparencia(raiz) {
         labels: transparencia.map(([projeto]) => projeto),
         datasets: [
           { label: 'Arrecadado', data: transparencia.map(([, a]) => emReais(a)), backgroundColor: cor('--cor-primaria') },
-          { label: 'Aplicado', data: transparencia.map(([, , b]) => emReais(b)), backgroundColor: cor('--cor-secundaria') },
+          { label: 'Aplicado', data: transparencia.map(([, , b]) => emReais(b)), backgroundColor: cor('--cor-info') }, // barras precisam de 3:1 com o fundo
         ],
       },
       options: {
