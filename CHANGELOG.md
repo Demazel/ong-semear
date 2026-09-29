@@ -5,8 +5,12 @@ Todas as mudanças relevantes do projeto. Formato baseado em [Keep a Changelog](
 ## [Não lançado]
 
 ### Adicionado
-- README com funcionalidades, estrutura, execução local e fluxo GitFlow
+- README com sumário, pré-requisitos, execução local, roteiro de testes, acessibilidade, GitFlow e versões
 - Este CHANGELOG
+- Modo alto contraste com preferência salva e suporte a `prefers-contrast` (#2, PR #5)
+
+### Corrigido
+- Ícones ⚠ e ✓ das mensagens de validação exibidos como código
 
 ## [3.0.0] - 2026-09-29
 
