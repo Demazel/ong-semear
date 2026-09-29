@@ -10,6 +10,7 @@ Todas as mudanças relevantes do projeto. Formato baseado em [Keep a Changelog](
 - Modo alto contraste com preferência salva e suporte a `prefers-contrast` (#2, PR #5)
 - Build de produção com Vite: CSS 34% e JS 31% menores, de 19 para 3 requisições (#4)
 - Deploy automático no GitHub Pages via GitHub Actions
+- Imagens responsivas: recorte 4:3, versões de 480 e 800 px com `srcset`/`sizes` (Projetos: -40% de imagens no celular, -70% no desktop)
 
 ### Corrigido
 - Ícones ⚠ e ✓ das mensagens de validação exibidos como código
