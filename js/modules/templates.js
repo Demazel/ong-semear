@@ -6,10 +6,23 @@ export const escaparHTML = (texto) => String(texto).replace(/[&<>"']/g, (c) => (
   { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
 ));
 
-const imagem = ({ arquivo, largura, altura, alt, lazy = true }) => `
+// Imagens responsivas: cada foto existe em 480px e 800px, em WebP (com fallback JPG).
+// O navegador escolhe a menor versão suficiente para a largura exibida (sizes) e a densidade da tela.
+const LARGURAS = [480, 800];
+const srcset = (arquivo, ext) => LARGURAS.map((l) => `${IMG}${arquivo}-${l}.${ext} ${l}w`).join(', ');
+
+export const TAMANHOS = {
+  // Card de projeto: 3 colunas no desktop, 2 no tablet, largura total no celular
+  card: '(min-width: 1280px) 380px, (min-width: 1024px) 30vw, (min-width: 768px) 46vw, calc(100vw - 2rem)',
+  // Foto da seção "Sobre nós": 7 de 12 colunas no desktop
+  destaque: '(min-width: 1280px) 680px, (min-width: 1024px) 58vw, (min-width: 768px) 48vw, calc(100vw - 2rem)',
+};
+
+const imagem = ({ arquivo, largura, altura, alt, sizes, lazy = true }) => `
   <picture>
-    <source srcset="${IMG}${arquivo}.webp" type="image/webp">
-    <img src="${IMG}${arquivo}.jpg" alt="${alt}" width="${largura}" height="${altura}"${lazy ? ' loading="lazy"' : ''}>
+    <source type="image/webp" srcset="${srcset(arquivo, 'webp')}" sizes="${sizes}">
+    <img src="${IMG}${arquivo}-800.jpg" srcset="${srcset(arquivo, 'jpg')}" sizes="${sizes}"
+      alt="${alt}" width="${largura}" height="${altura}" decoding="async"${lazy ? ' loading="lazy"' : ''}>
   </picture>`;
 
 const hero = (titulo, texto, extra = '', compacto = true) => `
@@ -26,7 +39,7 @@ export const badge = ([tipo, texto]) => `<span class="badge badge--${tipo}">${te
 
 export const cardProjeto = (p) => `
   <article class="card card--projeto col-12 col-md-6 col-lg-4">
-    <figure>${imagem({ arquivo: p.imagem, largura: p.largura, altura: p.altura, alt: p.alt })}</figure>
+    <figure>${imagem({ arquivo: p.imagem, largura: p.largura, altura: p.altura, alt: p.alt, sizes: TAMANHOS.card })}</figure>
     <div class="badges">${p.badges.map(badge).join('')}</div>
     <h3>${p.titulo}</h3>
     <p>${p.descricao}</p>
@@ -60,7 +73,7 @@ export const paginaInicio = () => `
     <h2 id="titulo-sobre">Sobre nós</h2>
     <div class="grid grid--centro">
       <figure class="col-12 col-md-6 col-lg-7">
-        ${imagem({ arquivo: 'voluntarios-mutirao', largura: 800, altura: 533, alt: 'Voluntários da ONG Semear entregando cestas básicas a famílias em uma praça do bairro', lazy: false })}
+        ${imagem({ arquivo: 'voluntarios-mutirao', largura: 800, altura: 533, alt: 'Voluntários da ONG Semear entregando cestas básicas a famílias em uma praça do bairro', sizes: TAMANHOS.destaque, lazy: false })}
         <figcaption>Mutirão de arrecadação realizado em março de 2026.</figcaption>
       </figure>
       <div class="col-12 col-md-6 col-lg-5">
