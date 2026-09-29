@@ -36,8 +36,8 @@
 
     <section id="projetos" class="secao container" aria-labelledby="titulo-projetos">
       <h2 id="titulo-projetos">Projetos sociais em andamento</h2>
-      <div class="cards">
-        <article class="card card--projeto">
+      <div class="grid">
+        <article class="card card--projeto col-12 col-md-6 col-lg-4">
           <figure>
             <picture>
               <source srcset="imagens/projeto-horta.webp" type="image/webp">
@@ -52,7 +52,7 @@
           </ul>
         </article>
 
-        <article class="card card--projeto">
+        <article class="card card--projeto col-12 col-md-6 col-lg-4">
           <figure>
             <picture>
               <source srcset="imagens/projeto-reforco-escolar.webp" type="image/webp">
@@ -67,7 +67,7 @@
           </ul>
         </article>
 
-        <article class="card card--projeto">
+        <article class="card card--projeto col-12 col-md-6 col-lg-4">
           <figure>
             <picture>
               <source srcset="imagens/projeto-cesta-solidaria.webp" type="image/webp">
@@ -99,14 +99,14 @@
 
     <section id="doacoes" class="secao container" aria-labelledby="titulo-doacoes">
       <h2 id="titulo-doacoes">Campanhas de doação</h2>
-      <div class="cards">
-        <article class="card">
+      <div class="grid">
+        <article class="card col-12 col-md-6">
           <h3>Campanha do Agasalho</h3>
           <p>Arrecadação de roupas e cobertores para o período de chuvas.</p>
           <p><label for="meta-agasalho">Arrecadado: 630 de 1.000 peças</label></p>
           <progress id="meta-agasalho" value="63" max="100">63%</progress>
         </article>
-        <article class="card">
+        <article class="card col-12 col-md-6">
           <h3>Material Escolar 2027</h3>
           <p>Kits escolares para os alunos do projeto Reforço Escolar.</p>
           <p><label for="meta-material">Arrecadado: R$ 4.200 de R$ 12.000</label></p>
@@ -172,21 +172,21 @@
   </main>
 
   <footer class="rodape">
-    <div class="container rodape__grid">
-      <address>
+    <div class="container grid">
+      <address class="col-12 col-sm-6 col-lg-4">
         <strong>ONG Semear</strong><br>
         Rua das Palmeiras, 123, Centro, Fortaleza/CE<br>
         <a href="tel:+5585999990000">(85) 99999-0000</a><br>
         <a href="mailto:contato@ongsemear.org.br">contato@ongsemear.org.br</a>
       </address>
-      <nav aria-label="Links do rodapé">
+      <nav class="col-12 col-sm-6 col-lg-4" aria-label="Links do rodapé">
         <ul>
           <li><a href="index.html">Início</a></li>
           <li><a href="projetos.html">Projetos</a></li>
           <li><a href="cadastro.html">Seja Voluntário</a></li>
         </ul>
       </nav>
-      <p>&copy; 2026 ONG Semear. Todos os direitos reservados.<br>CNPJ: 00.000.000/0001-00</p>
+      <p class="col-12 col-lg-4">&copy; 2026 ONG Semear. Todos os direitos reservados.<br>CNPJ: 00.000.000/0001-00</p>
     </div>
   </footer>
 </body>

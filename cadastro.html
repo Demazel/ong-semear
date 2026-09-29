@@ -89,12 +89,12 @@
             <input type="text" id="logradouro" name="logradouro" required maxlength="120" autocomplete="address-line1">
           </div>
 
-          <div class="linha">
-            <div class="campo">
+          <div class="grid linha">
+            <div class="campo col-12 col-sm-4">
               <label for="numero">Número <span class="obrigatorio">*</span></label>
               <input type="text" id="numero" name="numero" required maxlength="10" placeholder="Ex.: 123 ou S/N">
             </div>
-            <div class="campo">
+            <div class="campo col-12 col-sm-8">
               <label for="complemento">Complemento</label>
               <input type="text" id="complemento" name="complemento" maxlength="60" autocomplete="address-line2">
             </div>
@@ -105,12 +105,12 @@
             <input type="text" id="bairro" name="bairro" required maxlength="60">
           </div>
 
-          <div class="linha">
-            <div class="campo">
+          <div class="grid linha">
+            <div class="campo col-12 col-sm-8">
               <label for="cidade">Cidade <span class="obrigatorio">*</span></label>
               <input type="text" id="cidade" name="cidade" required maxlength="60" autocomplete="address-level2">
             </div>
-            <div class="campo">
+            <div class="campo col-12 col-sm-4">
               <label for="estado">Estado <span class="obrigatorio">*</span></label>
               <select id="estado" name="estado" required autocomplete="address-level1">
                 <option value="">Selecione</option>
@@ -171,21 +171,21 @@
   </main>
 
   <footer class="rodape">
-    <div class="container rodape__grid">
-      <address>
+    <div class="container grid">
+      <address class="col-12 col-sm-6 col-lg-4">
         <strong>ONG Semear</strong><br>
         Rua das Palmeiras, 123, Centro, Fortaleza/CE<br>
         <a href="tel:+5585999990000">(85) 99999-0000</a><br>
         <a href="mailto:contato@ongsemear.org.br">contato@ongsemear.org.br</a>
       </address>
-      <nav aria-label="Links do rodapé">
+      <nav class="col-12 col-sm-6 col-lg-4" aria-label="Links do rodapé">
         <ul>
           <li><a href="index.html">Início</a></li>
           <li><a href="projetos.html">Projetos</a></li>
           <li><a href="cadastro.html">Seja Voluntário</a></li>
         </ul>
       </nav>
-      <p>&copy; 2026 ONG Semear. Todos os direitos reservados.<br>CNPJ: 00.000.000/0001-00</p>
+      <p class="col-12 col-lg-4">&copy; 2026 ONG Semear. Todos os direitos reservados.<br>CNPJ: 00.000.000/0001-00</p>
     </div>
   </footer>
 </body>
