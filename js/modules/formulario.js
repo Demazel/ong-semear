@@ -1,4 +1,4 @@
-// Página de cadastro: junta máscaras, validação, busca de CEP e localStorage.
+// Página de cadastro: orquestra máscaras, validação, busca de CEP (api.js) e persistência (storage.js).
 import { aplicarMascaras } from './mascaras.js';
 import { validarCampo, validarFormulario, marcarCampo } from './validacao.js';
 import {
@@ -7,6 +7,7 @@ import {
 } from './storage.js';
 import { listaVoluntarios } from './templates.js';
 import { mostrarToast } from './ui.js';
+import { consultarCep } from './api.js';
 
 const CAMPOS_TEXTO = ['nome', 'cpf', 'nascimento', 'email', 'telefone', 'cep',
   'logradouro', 'numero', 'complemento', 'bairro', 'cidade', 'estado'];
@@ -30,20 +31,15 @@ function limparEstados(form) {
 }
 
 async function buscarCep(form) {
-  const cep = form.cep.value.replace(/\D/g, '');
-  if (cep.length !== 8) return;
+  if (form.cep.value.replace(/\D/g, '').length !== 8) return;
   try {
-    const resposta = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-    const dados = await resposta.json();
-    if (dados.erro) {
+    const endereco = await consultarCep(form.cep.value);
+    if (!endereco) {
       marcarCampo(form.cep, 'CEP não encontrado. Preencha o endereço manualmente.');
       return;
     }
-    form.logradouro.value = dados.logradouro || '';
-    form.bairro.value = dados.bairro || '';
-    form.cidade.value = dados.localidade || '';
-    form.estado.value = dados.uf || '';
-    ['logradouro', 'bairro', 'cidade', 'estado'].forEach((nome) => validarCampo(form, nome));
+    Object.entries(endereco).forEach(([nome, valor]) => { form.elements[nome].value = valor || ''; });
+    Object.keys(endereco).forEach((nome) => validarCampo(form, nome));
     salvarRascunho(lerDados(form));
     form.numero.focus();
   } catch {
