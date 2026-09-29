@@ -37,6 +37,10 @@ export function removerVoluntario(id) {
   salvar('voluntarios', listarVoluntarios().filter((v) => v.id !== id));
 }
 
+// ----- Preferência de tema (acessibilidade) -----
+export const lerTema = () => ler('tema', null);
+export const salvarTema = (tema) => salvar('tema', tema);
+
 // ----- Rascunho do formulário (salvo enquanto o usuário digita) -----
 export const lerRascunho = () => ler('rascunho', null);
 export const salvarRascunho = (dados) => salvar('rascunho', dados);
