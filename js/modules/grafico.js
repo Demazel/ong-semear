@@ -7,6 +7,19 @@ const emReais = (texto) => Number(texto.replace(/\D/g, ''));
 
 let graficoAtual = null;
 
+// Ao trocar o tema, o gráfico relê as cores das variáveis CSS
+document.addEventListener('semear:tema', () => {
+  if (!graficoAtual) return;
+  const css = getComputedStyle(document.documentElement);
+  const cor = (nome) => css.getPropertyValue(nome).trim();
+  graficoAtual.data.datasets[0].backgroundColor = cor('--cor-primaria');
+  graficoAtual.data.datasets[1].backgroundColor = cor('--cor-info');
+  graficoAtual.options.plugins.legend.labels.color = cor('--cor-texto');
+  graficoAtual.options.scales.x.ticks.color = cor('--cor-texto');
+  graficoAtual.options.scales.y.ticks.color = cor('--cor-texto');
+  graficoAtual.update();
+});
+
 export async function montarGraficoTransparencia(raiz) {
   const canvas = raiz.querySelector('#grafico-transparencia');
   if (!canvas) return;
@@ -26,13 +39,14 @@ export async function montarGraficoTransparencia(raiz) {
         labels: transparencia.map(([projeto]) => projeto),
         datasets: [
           { label: 'Arrecadado', data: transparencia.map(([, a]) => emReais(a)), backgroundColor: cor('--cor-primaria') },
-          { label: 'Aplicado', data: transparencia.map(([, , b]) => emReais(b)), backgroundColor: cor('--cor-secundaria') },
+          { label: 'Aplicado', data: transparencia.map(([, , b]) => emReais(b)), backgroundColor: cor('--cor-info') }, // barras precisam de 3:1 com o fundo
         ],
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
+          legend: { labels: { color: cor('--cor-texto') } },
           tooltip: {
             callbacks: {
               label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`,
@@ -40,7 +54,8 @@ export async function montarGraficoTransparencia(raiz) {
           },
         },
         scales: {
-          y: { ticks: { callback: (valor) => `R$ ${(valor / 1000).toLocaleString('pt-BR')} mil` } },
+          x: { ticks: { color: cor('--cor-texto') } },
+          y: { ticks: { color: cor('--cor-texto'), callback: (valor) => `R$ ${(valor / 1000).toLocaleString('pt-BR')} mil` } },
         },
       },
     });

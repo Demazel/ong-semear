@@ -4,29 +4,30 @@
    ========================================================= */
 :root {
   /* ----- Cores primárias (verde: natureza, crescimento, confiança) ----- */
-  --cor-primaria: #2e7d4f;         /* botões, links, destaques (5,1:1 no branco) */
-  --cor-primaria-escura: #1f5c3a;  /* hover, títulos, rodapé (7,9:1 no branco) */
+  --cor-primaria: #2e7d4f;         /* botões, links, destaques (5,05:1 no branco) */
+  --cor-primaria-escura: #1f5c3a;  /* hover, títulos, rodapé (7,92:1 no branco) */
   --cor-primaria-clara: #e8f5ec;   /* fundos de seção e mensagens */
 
   /* ----- Cor secundária (amarelo: sol, colheita, energia) ----- */
-  --cor-secundaria: #f2b705;       /* foco do teclado e detalhes */
+  --cor-secundaria: #f2b705;       /* detalhes decorativos (1,82:1 no branco: nunca usar como indicador) */
   --cor-secundaria-clara: #fff6d6; /* fundo de avisos */
 
   /* ----- Neutros ----- */
-  --cor-texto: #1e2a23;            /* texto principal (14,6:1) */
-  --cor-texto-suave: #4f5d55;      /* legendas e dicas (6,9:1) */
+  --cor-texto: #1e2a23;            /* texto principal (14,89:1) */
+  --cor-texto-suave: #4f5d55;      /* legendas e dicas (6,93:1) */
   --cor-borda: #cfd8d2;
   --cor-fundo: #ffffff;
   --cor-fundo-alt: #f6f8f7;
 
   /* ----- Feedback ----- */
-  --cor-erro: #b3261e;             /* 6,5:1 no branco */
+  --cor-erro: #b3261e;             /* 6,54:1 no branco */
   --cor-erro-clara: #fdf1f0;
   --cor-sombra: rgba(31, 92, 58, 0.12);
   --cor-overlay: rgba(30, 42, 35, 0.6);
-  --cor-info: #1f5f99;             /* 6,6:1 no branco */
+  --cor-info: #1f5f99;             /* 5,78:1 no fundo info-clara */
   --cor-info-clara: #e7f0f9;
-  --cor-aviso: #8a5a00;            /* âmbar escuro para texto, 5,9:1 */
+  --cor-aviso: #8a5a00;            /* âmbar escuro para texto, 5,48:1 no fundo de aviso */
+  --cor-foco-contorno: #1e2a23;    /* contorno de foco: 14,89:1 no branco (WCAG 1.4.11 exige 3:1) */
   --cor-foco: rgba(46, 125, 79, 0.25);      /* anel de foco dos campos */
   --cor-erro-foco: rgba(179, 38, 30, 0.2);
 
@@ -62,4 +63,33 @@
   /* ----- Larguras ----- */
   --largura-max: 1100px;
   --largura-texto: 720px;
+}
+
+/* =========================================================
+   TEMA ALTO CONTRASTE (WCAG 2.1 AA / AAA)
+   Ativado pelo botão do cabeçalho (js/modules/tema.js) ou pela
+   preferência do sistema (prefers-contrast: more).
+   Só as variáveis mudam: todos os componentes se adaptam sozinhos.
+   ========================================================= */
+:root[data-tema="alto-contraste"] {
+  --cor-primaria: #ffd600;          /* amarelo no preto: 14,87:1 */
+  --cor-primaria-escura: #ffd600;
+  --cor-primaria-clara: #1a1a1a;
+  --cor-secundaria: #00e5ff;        /* ciano: 13,65:1 */
+  --cor-secundaria-clara: #1a1a1a;
+  --cor-texto: #ffffff;             /* 21:1 */
+  --cor-texto-suave: #e6e6e6;       /* 16,83:1 */
+  --cor-borda: #ffffff;
+  --cor-fundo: #000000;
+  --cor-fundo-alt: #121212;
+  --cor-erro: #ff8a80;              /* 8,03:1 no fundo de erro */
+  --cor-erro-clara: #2a0a0a;
+  --cor-sombra: transparent;
+  --cor-overlay: rgba(0, 0, 0, 0.85);
+  --cor-info: #8fd3ff;              /* 10,88:1 no fundo de info */
+  --cor-info-clara: #0a1a26;
+  --cor-aviso: #ffd600;
+  --cor-foco-contorno: #00e5ff;     /* 13,65:1 no preto */
+  --cor-foco: rgba(0, 229, 255, 0.5);
+  --cor-erro-foco: rgba(255, 138, 128, 0.5);
 }

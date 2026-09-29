@@ -12,6 +12,15 @@
   <link rel="stylesheet" href="../css/componentes.css">
   <link rel="stylesheet" href="../css/responsivo.css">
   <script type="module" src="../js/main.js"></script>
+  <!-- Aplica o tema salvo antes da primeira pintura, evitando "piscar" o tema claro -->
+  <script>
+    try {
+      var tema = JSON.parse(localStorage.getItem('semear:tema'));
+      if (tema === 'alto-contraste' || (tema === null && matchMedia('(prefers-contrast: more)').matches)) {
+        document.documentElement.dataset.tema = 'alto-contraste';
+      }
+    } catch (e) { /* armazenamento indisponível: segue o tema padrão */ }
+  </script>
 </head>
 <body>
   <a href="#app" class="pular-link">Pular para o conteúdo</a>
@@ -39,6 +48,10 @@
           </li>
           <li><a href="#/cadastro" data-rota="cadastro" class="botao botao--pequeno">Seja Voluntário</a></li>
         </ul>
+        <button type="button" class="botao-contraste" id="botao-contraste" aria-pressed="false">
+          <span class="botao-contraste__icone" aria-hidden="true">&#9680;</span>
+          <span class="botao-contraste__texto">Alto contraste</span>
+        </button>
       </nav>
     </div>
   </header>

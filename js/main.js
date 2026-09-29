@@ -1,6 +1,7 @@
 // Ponto de entrada da SPA: registra as rotas e inicia os módulos globais.
 import { iniciarRouter } from './modules/router.js';
 import { iniciarMenu } from './modules/menu.js';
+import { iniciarTema } from './modules/tema.js';
 import { montarModais } from './modules/ui.js';
 import { montarCadastro } from './modules/formulario.js';
 import { montarGraficoTransparencia } from './modules/grafico.js';
@@ -9,6 +10,7 @@ import { paginaInicio, paginaProjetos, paginaCadastro, pagina404 } from './modul
 const app = document.getElementById('app');
 
 iniciarMenu();
+iniciarTema();
 
 // "Pular para o conteúdo" sem alterar a rota atual
 document.querySelector('.pular-link').addEventListener('click', (evento) => {

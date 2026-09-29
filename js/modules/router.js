@@ -3,6 +3,7 @@
 
 export function iniciarRouter({ rotas, rotaPadrao, rota404, container }) {
   const links = document.querySelectorAll('[data-rota]');
+  let primeiraRenderizacao = true;
 
   function lerHash() {
     const [, rota = '', secao = ''] = location.hash.match(/^#\/([^/]*)\/?(.*)$/) || [];
@@ -33,9 +34,11 @@ export function iniciarRouter({ rotas, rotaPadrao, rota404, container }) {
       alvo.scrollIntoView();
     } else {
       window.scrollTo(0, 0);
-      // Leitores de tela anunciam a nova "página"
-      container.focus({ preventScroll: true });
+      // Em trocas de rota, o foco vai para o conteúdo novo e o leitor de tela anuncia a "página".
+      // No carregamento inicial não: o primeiro Tab deve alcançar o link "Pular para o conteúdo".
+      if (!primeiraRenderizacao) container.focus({ preventScroll: true });
     }
+    primeiraRenderizacao = false;
   }
 
   window.addEventListener('hashchange', renderizar);

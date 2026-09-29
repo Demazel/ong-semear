@@ -15,7 +15,7 @@ img { max-width: 100%; height: auto; display: block; }
 a { color: var(--cor-primaria); transition: color var(--transicao); }
 a:hover { color: var(--cor-primaria-escura); }
 
-:focus-visible { outline: 3px solid var(--cor-secundaria); outline-offset: 2px; }
+:focus-visible { outline: 3px solid var(--cor-foco-contorno); outline-offset: 2px; }
 
 h1, h2, h3 { line-height: var(--altura-linha-titulo); color: var(--cor-primaria-escura); }
 h1 { font-size: var(--texto-xl); }
