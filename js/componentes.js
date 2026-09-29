@@ -8,8 +8,9 @@ function mostrarToast(mensagem, tipo = 'sucesso') {
     area.className = 'toast-area';
     area.setAttribute('role', 'status');
     area.setAttribute('aria-live', 'polite');
-    document.body.append(area);
   }
+  // Com um modal aberto, o toast entra dentro dele para ficar acima do fundo escurecido
+  (document.querySelector('dialog[open]') || document.body).append(area);
   const toast = document.createElement('p');
   toast.className = `toast toast--${tipo}`;
   toast.textContent = mensagem;
