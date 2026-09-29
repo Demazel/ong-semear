@@ -288,7 +288,7 @@ figcaption { font-size: var(--texto-sm); color: var(--cor-texto-suave); margin-t
 }
 .card--projeto > ul, .card > p:has(> label) { margin-top: auto; }
 .card:hover { box-shadow: var(--sombra); }
-.card h3 { margin-top: 0; }
+.card :is(h3, p) { margin-top: 0; }
 .card--projeto figure { margin: calc(var(--espaco-lg) * -1) calc(var(--espaco-lg) * -1) var(--espaco-md); }
 .card--projeto img {
   width: 100%;
@@ -353,7 +353,7 @@ input:focus, select:focus {
 }
 
 /* Feedback só depois que o usuário interage com o campo (:user-valid / :user-invalid) */
-input:user-valid, select:user-valid { border-color: var(--cor-primaria); }
+input:required:user-valid, select:required:user-valid { border-color: var(--cor-primaria); }
 input:user-invalid, select:user-invalid {
   border-color: var(--cor-erro);
   background: var(--cor-erro-clara);
@@ -361,7 +361,7 @@ input:user-invalid, select:user-invalid {
 input:user-invalid:focus, select:user-invalid:focus { box-shadow: 0 0 0 3px var(--cor-erro-foco); }
 
 /* Sucesso: ✓ verde no label | Erro: dica fica vermelha e aparece uma mensagem */
-.campo:has(> :is(input, select):user-valid) > label::after { content: " ✓"; color: var(--cor-primaria); }
+.campo:has(> :is(input, select):required:user-valid) > label::after { content: " ✓"; color: var(--cor-primaria); }
 .campo:has(> :is(input, select):user-invalid) > small { color: var(--cor-erro); }
 .campo:has(> :is(input, select):user-invalid)::after {
   content: "⚠ Verifique este campo.";
