@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cadastre-se como voluntário da ONG Semear e ajude a transformar a sua comunidade.">
+  <title>ONG Semear | Seja Voluntário</title>
+  <link rel="icon" href="imagens/logo-semear.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/mascaras.js" defer></script>
+</head>
+<body>
+  <a href="#conteudo" class="pular-link">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="container topo__conteudo">
+      <a href="index.html" class="logo">
+        <img src="imagens/logo-semear.svg" alt="Logotipo da ONG Semear" width="180" height="60">
+      </a>
+      <nav aria-label="Menu principal">
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html" class="botao botao--pequeno" aria-current="page">Seja Voluntário</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <div class="hero hero--compacto">
+      <div class="container">
+        <h1>Seja Voluntário</h1>
+        <p class="hero__texto">Preencha o formulário abaixo e faça parte da rede de voluntários da ONG Semear. Entraremos em contato em até 5 dias úteis.</p>
+      </div>
+    </div>
+
+    <section class="secao container container--estreito" aria-labelledby="titulo-form">
+      <h2 id="titulo-form">Formulário de cadastro</h2>
+      <p class="aviso">Campos marcados com <span class="obrigatorio">*</span> são obrigatórios.</p>
+
+      <form id="form-cadastro" class="formulario" action="#" method="post">
+        <fieldset>
+          <legend>Dados pessoais</legend>
+
+          <div class="campo">
+            <label for="nome">Nome completo <span class="obrigatorio">*</span></label>
+            <input type="text" id="nome" name="nome" required minlength="3" maxlength="100" pattern="[A-Za-zÀ-ÿ]+( [A-Za-zÀ-ÿ]+)+" title="Informe nome e sobrenome" autocomplete="name">
+          </div>
+
+          <div class="campo">
+            <label for="cpf">CPF <span class="obrigatorio">*</span></label>
+            <input type="text" id="cpf" name="cpf" required inputmode="numeric" maxlength="14" placeholder="000.000.000-00" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Formato 000.000.000-00" aria-describedby="cpf-dica">
+            <small id="cpf-dica">Digite apenas os números; a formatação é automática.</small>
+          </div>
+
+          <div class="campo">
+            <label for="nascimento">Data de nascimento <span class="obrigatorio">*</span></label>
+            <input type="date" id="nascimento" name="nascimento" required min="1920-01-01" max="2010-12-31" title="Voluntários devem ter no mínimo 16 anos" autocomplete="bday" aria-describedby="nascimento-dica">
+            <small id="nascimento-dica">Idade mínima de 16 anos.</small>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Contato</legend>
+
+          <div class="campo">
+            <label for="email">E-mail <span class="obrigatorio">*</span></label>
+            <input type="email" id="email" name="email" required maxlength="120" placeholder="seuemail@exemplo.com" autocomplete="email">
+          </div>
+
+          <div class="campo">
+            <label for="telefone">Telefone <span class="obrigatorio">*</span></label>
+            <input type="tel" id="telefone" name="telefone" required maxlength="15" placeholder="(00) 00000-0000" pattern="\(\d{2}\) \d{4,5}-\d{4}" title="Formato (00) 00000-0000" autocomplete="tel">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Endereço</legend>
+
+          <div class="campo">
+            <label for="cep">CEP <span class="obrigatorio">*</span></label>
+            <input type="text" id="cep" name="cep" required inputmode="numeric" maxlength="9" placeholder="00000-000" pattern="\d{5}-\d{3}" title="Formato 00000-000" autocomplete="postal-code" aria-describedby="cep-dica">
+            <small id="cep-dica">Ao informar o CEP, o endereço é preenchido automaticamente.</small>
+          </div>
+
+          <div class="campo">
+            <label for="logradouro">Endereço <span class="obrigatorio">*</span></label>
+            <input type="text" id="logradouro" name="logradouro" required maxlength="120" autocomplete="address-line1">
+          </div>
+
+          <div class="linha">
+            <div class="campo">
+              <label for="numero">Número <span class="obrigatorio">*</span></label>
+              <input type="text" id="numero" name="numero" required maxlength="10" placeholder="Ex.: 123 ou S/N">
+            </div>
+            <div class="campo">
+              <label for="complemento">Complemento</label>
+              <input type="text" id="complemento" name="complemento" maxlength="60" autocomplete="address-line2">
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="bairro">Bairro <span class="obrigatorio">*</span></label>
+            <input type="text" id="bairro" name="bairro" required maxlength="60">
+          </div>
+
+          <div class="linha">
+            <div class="campo">
+              <label for="cidade">Cidade <span class="obrigatorio">*</span></label>
+              <input type="text" id="cidade" name="cidade" required maxlength="60" autocomplete="address-level2">
+            </div>
+            <div class="campo">
+              <label for="estado">Estado <span class="obrigatorio">*</span></label>
+              <select id="estado" name="estado" required autocomplete="address-level1">
+                <option value="">Selecione</option>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Área de interesse <span class="obrigatorio">*</span></legend>
+          <div class="opcoes">
+            <label><input type="radio" name="interesse" value="horta" required> Horta Comunitária</label>
+            <label><input type="radio" name="interesse" value="reforco"> Reforço Escolar</label>
+            <label><input type="radio" name="interesse" value="cesta"> Cesta Solidária</label>
+            <label><input type="radio" name="interesse" value="eventos"> Eventos e campanhas</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Termos</legend>
+          <label class="opcao-termo">
+            <input type="checkbox" name="termos" required>
+            Li e aceito a política de privacidade e autorizo o uso dos meus dados para fins de cadastro, conforme a LGPD. <span class="obrigatorio">*</span>
+          </label>
+        </fieldset>
+
+        <button type="submit" class="botao">Enviar cadastro</button>
+        <p id="mensagem-sucesso" class="mensagem-sucesso" role="status" tabindex="-1" hidden>Cadastro enviado com sucesso! Em breve entraremos em contato.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape__grid">
+      <address>
+        <strong>ONG Semear</strong><br>
+        Rua das Palmeiras, 123, Centro, Fortaleza/CE<br>
+        <a href="tel:+5585999990000">(85) 99999-0000</a><br>
+        <a href="mailto:contato@ongsemear.org.br">contato@ongsemear.org.br</a>
+      </address>
+      <nav aria-label="Links do rodapé">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html">Seja Voluntário</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2026 ONG Semear. Todos os direitos reservados.<br>CNPJ: 00.000.000/0001-00</p>
+    </div>
+  </footer>
+</body>
+</html>

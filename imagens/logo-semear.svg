@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 60" width="180" height="60" role="img" aria-labelledby="titulo-logo">
+  <title id="titulo-logo">ONG Semear</title>
+  <circle cx="30" cy="30" r="26" fill="#2e7d4f"/>
+  <path d="M30 47 V27" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+  <path d="M30 32 C29 22 22 17 13 19 C13 28 20 33 30 32 Z" fill="#a8e6b8"/>
+  <path d="M30 27 C31 17 38 12 47 14 C47 23 40 28 30 27 Z" fill="#ffffff"/>
+  <text x="64" y="35" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#1f5c3a">Semear</text>
+  <text x="65" y="50" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#4a7a5c">ONG · desde 2015</text>
+</svg>

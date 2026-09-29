@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça os projetos sociais da ONG Semear e descubra como ser voluntário ou doar para nossas campanhas.">
+  <title>ONG Semear | Nossos Projetos</title>
+  <link rel="icon" href="imagens/logo-semear.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#conteudo" class="pular-link">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="container topo__conteudo">
+      <a href="index.html" class="logo">
+        <img src="imagens/logo-semear.svg" alt="Logotipo da ONG Semear" width="180" height="60">
+      </a>
+      <nav aria-label="Menu principal">
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html" aria-current="page">Projetos</a></li>
+          <li><a href="cadastro.html" class="botao botao--pequeno">Seja Voluntário</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <div class="hero hero--compacto">
+      <div class="container">
+        <h1>Nossos Projetos</h1>
+        <p class="hero__texto">Conheça as frentes de atuação da ONG Semear e escolha a causa com a qual você mais se identifica. Você pode ajudar doando seu tempo como voluntário ou contribuindo com nossas campanhas.</p>
+      </div>
+    </div>
+
+    <section id="projetos" class="secao container" aria-labelledby="titulo-projetos">
+      <h2 id="titulo-projetos">Projetos sociais em andamento</h2>
+      <div class="cards">
+        <article class="card card--projeto">
+          <figure>
+            <picture>
+              <source srcset="imagens/projeto-horta.webp" type="image/webp">
+              <img src="imagens/projeto-horta.jpg" alt="Voluntários plantando mudas de hortaliças em canteiros de uma horta comunitária" width="800" height="533" loading="lazy">
+            </picture>
+          </figure>
+          <h3>Horta Comunitária</h3>
+          <p>Transforma terrenos ociosos em hortas que abastecem famílias e ensinam técnicas de cultivo sustentável.</p>
+          <ul>
+            <li>Meta 2026: 5 hortas ativas</li>
+            <li>120 famílias atendidas</li>
+          </ul>
+        </article>
+
+        <article class="card card--projeto">
+          <figure>
+            <picture>
+              <source srcset="imagens/projeto-reforco-escolar.webp" type="image/webp">
+              <img src="imagens/projeto-reforco-escolar.jpg" alt="Voluntária ajudando crianças com a lição de casa em uma sala de aula" width="800" height="533" loading="lazy">
+            </picture>
+          </figure>
+          <h3>Reforço Escolar</h3>
+          <p>Aulas gratuitas de português e matemática para crianças do ensino fundamental, no contraturno escolar.</p>
+          <ul>
+            <li>Meta 2026: 200 alunos</li>
+            <li>Aulas de segunda a quinta</li>
+          </ul>
+        </article>
+
+        <article class="card card--projeto">
+          <figure>
+            <picture>
+              <source srcset="imagens/projeto-cesta-solidaria.webp" type="image/webp">
+              <img src="imagens/projeto-cesta-solidaria.jpg" alt="Caixas de doação cheias de alimentos não perecíveis organizadas sobre uma mesa" width="800" height="533" loading="lazy">
+            </picture>
+          </figure>
+          <h3>Cesta Solidária</h3>
+          <p>Arrecadação e distribuição mensal de cestas básicas para famílias em situação de insegurança alimentar.</p>
+          <ul>
+            <li>Meta 2026: 6.000 cestas</li>
+            <li>Distribuição todo primeiro sábado do mês</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="voluntariado" class="secao secao--destaque" aria-labelledby="titulo-voluntariado">
+      <div class="container">
+        <h2 id="titulo-voluntariado">Como ser voluntário</h2>
+        <ol class="passos">
+          <li>Preencha o formulário de cadastro com seus dados e sua área de interesse.</li>
+          <li>Nossa equipe entra em contato em até 5 dias úteis.</li>
+          <li>Participe de uma integração on-line de 1 hora.</li>
+          <li>Escolha os horários e comece a transformar vidas.</li>
+        </ol>
+        <a href="cadastro.html" class="botao">Quero ser voluntário</a>
+      </div>
+    </section>
+
+    <section id="doacoes" class="secao container" aria-labelledby="titulo-doacoes">
+      <h2 id="titulo-doacoes">Campanhas de doação</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Campanha do Agasalho</h3>
+          <p>Arrecadação de roupas e cobertores para o período de chuvas.</p>
+          <p><label for="meta-agasalho">Arrecadado: 630 de 1.000 peças</label></p>
+          <progress id="meta-agasalho" value="63" max="100">63%</progress>
+        </article>
+        <article class="card">
+          <h3>Material Escolar 2027</h3>
+          <p>Kits escolares para os alunos do projeto Reforço Escolar.</p>
+          <p><label for="meta-material">Arrecadado: R$ 4.200 de R$ 12.000</label></p>
+          <progress id="meta-material" value="35" max="100">35%</progress>
+        </article>
+      </div>
+      <h3>Formas de doar</h3>
+      <ul class="lista-acoes">
+        <li>PIX: <strong>doe@ongsemear.org.br</strong></li>
+        <li>Transferência: Banco 000, agência 0001, conta 12345-6</li>
+        <li>Doação de itens: na sede, de segunda a sexta, das 8h às 17h</li>
+      </ul>
+    </section>
+
+    <section id="transparencia" class="secao container" aria-labelledby="titulo-transparencia">
+      <h2 id="titulo-transparencia">Transparência e prestação de contas</h2>
+      <div class="tabela-rolagem">
+        <table>
+          <caption>Arrecadação e aplicação dos recursos no 1º semestre de 2026</caption>
+          <thead>
+            <tr>
+              <th scope="col">Projeto</th>
+              <th scope="col">Arrecadado</th>
+              <th scope="col">Aplicado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Horta Comunitária</th>
+              <td>R$ 18.500</td>
+              <td>R$ 17.900</td>
+            </tr>
+            <tr>
+              <th scope="row">Reforço Escolar</th>
+              <td>R$ 24.000</td>
+              <td>R$ 23.100</td>
+            </tr>
+            <tr>
+              <th scope="row">Cesta Solidária</th>
+              <td>R$ 62.300</td>
+              <td>R$ 61.800</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="faq" class="secao container" aria-labelledby="titulo-faq">
+      <h2 id="titulo-faq">Perguntas frequentes</h2>
+      <details>
+        <summary>Preciso ter experiência para ser voluntário?</summary>
+        <p>Não. Oferecemos uma integração inicial e acompanhamento durante as atividades.</p>
+      </details>
+      <details>
+        <summary>Qual a idade mínima para participar?</summary>
+        <p>A partir de 16 anos. Menores de 18 anos precisam de autorização dos responsáveis.</p>
+      </details>
+      <details>
+        <summary>Posso escolher os dias em que vou ajudar?</summary>
+        <p>Sim. Você informa sua disponibilidade e montamos a escala de acordo com ela.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape__grid">
+      <address>
+        <strong>ONG Semear</strong><br>
+        Rua das Palmeiras, 123, Centro, Fortaleza/CE<br>
+        <a href="tel:+5585999990000">(85) 99999-0000</a><br>
+        <a href="mailto:contato@ongsemear.org.br">contato@ongsemear.org.br</a>
+      </address>
+      <nav aria-label="Links do rodapé">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html">Seja Voluntário</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2026 ONG Semear. Todos os direitos reservados.<br>CNPJ: 00.000.000/0001-00</p>
+    </div>
+  </footer>
+</body>
+</html>
