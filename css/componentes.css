@@ -49,6 +49,47 @@
   padding-block: var(--espaco-md);
 }
 
+/* ----- Navegação: menu, botão hambúrguer e botão de contraste lado a lado ----- */
+.navegacao { display: flex; align-items: center; gap: var(--espaco-sm); }
+
+/* ----- Botão de alto contraste ----- */
+.botao-contraste {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaco-xs);
+  min-height: 44px;
+  padding: var(--espaco-xs) var(--espaco-sm);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-sm);
+  background: transparent;
+  color: var(--cor-texto);
+  font: inherit;
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-destaque);
+  cursor: pointer;
+  transition: background var(--transicao), color var(--transicao);
+}
+.botao-contraste:hover { background: var(--cor-fundo-alt); }
+.botao-contraste[aria-pressed="true"] { background: var(--cor-primaria); color: var(--cor-fundo); border-color: var(--cor-primaria); }
+.botao-contraste__icone { font-size: var(--texto-md); line-height: 1; }
+
+/* No celular só o ícone aparece; o texto continua disponível para leitores de tela */
+@media (max-width: 575px) {
+  .botao-contraste__texto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .botao-contraste { min-width: 44px; justify-content: center; }
+}
+
+/* No alto contraste, a logo (cores fixas no SVG) ganha fundo claro para continuar legível */
+:root[data-tema="alto-contraste"] .logo img { background: #ffffff; border-radius: var(--raio-sm); padding: var(--espaco-xs); }
+:root[data-tema="alto-contraste"] a:not(.botao) { text-decoration: underline; }
+
 /* ----- Botão hambúrguer (visível só no mobile) ----- */
 .menu-toggle {
   display: flex;
@@ -201,6 +242,7 @@ legend { font-weight: var(--peso-forte); color: var(--cor-primaria-escura); padd
 
 input, select {
   font: inherit;
+  color: var(--cor-texto);
   padding: var(--espaco-sm) var(--espaco-md);
   border: 1px solid var(--cor-borda);
   border-radius: var(--raio-sm);
@@ -216,7 +258,7 @@ input:focus, select:focus {
 
 /* Estados de validação aplicados pelo JS (js/modules/validacao.js) */
 .campo--ok > :is(input, select) { border-color: var(--cor-primaria); }
-.campo--ok > label::after { content: " ¹3"; color: var(--cor-primaria); }
+.campo--ok > label::after { content: " \2713"; color: var(--cor-primaria); }
 .campo--erro > :is(input, select) {
   border-color: var(--cor-erro);
   background: var(--cor-erro-clara);
@@ -233,7 +275,7 @@ fieldset.campo--erro { border-color: var(--cor-erro); }
   color: var(--cor-erro);
 }
 .erro-campo:empty { display: none; }
-.erro-campo::before { content: "A0  "; }
+.erro-campo::before { content: "\26A0\00A0"; }
 
 input[type="radio"], input[type="checkbox"] { accent-color: var(--cor-primaria); width: 1.1rem; height: 1.1rem; }
 

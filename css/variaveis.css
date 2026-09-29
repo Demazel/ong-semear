@@ -63,3 +63,31 @@
   --largura-max: 1100px;
   --largura-texto: 720px;
 }
+
+/* =========================================================
+   TEMA ALTO CONTRASTE (WCAG 2.1 AA / AAA)
+   Ativado pelo botão do cabeçalho (js/modules/tema.js) ou pela
+   preferência do sistema (prefers-contrast: more).
+   Só as variáveis mudam: todos os componentes se adaptam sozinhos.
+   ========================================================= */
+:root[data-tema="alto-contraste"] {
+  --cor-primaria: #ffd600;          /* amarelo no preto: 14,9:1 */
+  --cor-primaria-escura: #ffd600;
+  --cor-primaria-clara: #1a1a1a;
+  --cor-secundaria: #00e5ff;        /* foco do teclado: ciano, 13,1:1 */
+  --cor-secundaria-clara: #1a1a1a;
+  --cor-texto: #ffffff;             /* 21:1 */
+  --cor-texto-suave: #e6e6e6;       /* 16,6:1 */
+  --cor-borda: #ffffff;
+  --cor-fundo: #000000;
+  --cor-fundo-alt: #121212;
+  --cor-erro: #ff8a80;              /* 9,6:1 */
+  --cor-erro-clara: #2a0a0a;
+  --cor-sombra: transparent;
+  --cor-overlay: rgba(0, 0, 0, 0.85);
+  --cor-info: #8fd3ff;              /* 12,4:1 */
+  --cor-info-clara: #0a1a26;
+  --cor-aviso: #ffd600;
+  --cor-foco: rgba(0, 229, 255, 0.5);
+  --cor-erro-foco: rgba(255, 138, 128, 0.5);
+}
