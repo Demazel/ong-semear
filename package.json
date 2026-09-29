@@ -1,6 +1,6 @@
 {
   "name": "ong-semear",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "private": true,
   "description": "Plataforma web da ONG Semear (SPA em HTML, CSS e JavaScript)",
   "type": "module",

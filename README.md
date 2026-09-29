@@ -179,7 +179,7 @@ As tarefas são organizadas em [issues](https://github.com/Demazel/ong-semear/is
 | [v1.0.0](https://github.com/Demazel/ong-semear/releases/tag/v1.0.0) | Estrutura HTML5 semântica |
 | [v2.0.0](https://github.com/Demazel/ong-semear/releases/tag/v2.0.0) | CSS3, design system e responsividade |
 | [v3.0.0](https://github.com/Demazel/ong-semear/releases/tag/v3.0.0) | SPA em JavaScript |
-| v4.0.0 (em andamento) | Versionamento, acessibilidade, otimização e documentação |
+| [v4.0.0](https://github.com/Demazel/ong-semear/releases/tag/v4.0.0) | Versionamento, acessibilidade, otimização e documentação |
 
 O histórico detalhado está no [CHANGELOG](CHANGELOG.md).
 
