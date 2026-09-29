@@ -4,6 +4,8 @@ Todas as mudanças relevantes do projeto. Formato baseado em [Keep a Changelog](
 
 ## [Não lançado]
 
+## [4.0.0] - 2026-09-29
+
 ### Adicionado
 - README com sumário, pré-requisitos, execução local, roteiro de testes, acessibilidade, GitFlow e versões
 - Este CHANGELOG
@@ -49,7 +51,8 @@ Todas as mudanças relevantes do projeto. Formato baseado em [Keep a Changelog](
 - Páginas `index.html`, `projetos.html` e `cadastro.html` com HTML5 semântico
 - Formulário com validação nativa e máscaras de CPF, telefone e CEP
 
-[Não lançado]: https://github.com/Demazel/ong-semear/compare/v3.0.0...develop
+[Não lançado]: https://github.com/Demazel/ong-semear/compare/v4.0.0...develop
+[4.0.0]: https://github.com/Demazel/ong-semear/compare/v3.0.0...v4.0.0
 [3.0.0]: https://github.com/Demazel/ong-semear/compare/v2.0.0...v3.0.0
 [2.0.0]: https://github.com/Demazel/ong-semear/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/Demazel/ong-semear/releases/tag/v1.0.0
