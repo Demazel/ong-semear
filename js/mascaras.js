@@ -51,8 +51,16 @@ const mensagem = document.getElementById('mensagem-sucesso');
 if (formulario && mensagem) {
   formulario.addEventListener('submit', (evento) => {
     evento.preventDefault();
-    formulario.reset();
-    mensagem.hidden = false;
-    mensagem.focus();
+    // Estado disabled enquanto "envia", evitando clique duplo
+    const botao = formulario.querySelector('[type="submit"]');
+    botao.disabled = true;
+    botao.textContent = 'Enviando...';
+    setTimeout(() => {
+      formulario.reset();
+      botao.disabled = false;
+      botao.textContent = 'Enviar cadastro';
+      mensagem.hidden = false;
+      mensagem.focus();
+    }, 1200);
   });
 }
